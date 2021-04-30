@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepper Task</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <!--CSS files-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Commenting out stylesheet as embedding all here-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* We are using rem for relative sizing*/
+        /* Margin and padding are done in both rem and px format*/
+        body {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        #mainContainer {
+            max-width: 600px;
+            background-color: #FBFBF7;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            color: #4325e0;
+            font-weight: 400;
+            padding-top: 6vw;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h3 {
+            font-size: 1rem;
+            letter-spacing: 0px;
+            color: #424140;
+            font-weight: 700;
+            text-align: left;
+            margin: 1rem 0;
+        }
+
+        p {
+            letter-spacing: 0px;
+            line-height: 25px;
+            color: #424140;
+            text-align: justify;
+            width: 100%;
+        }
+
+        #listContainer {
+            background-color: #FDF5F3;
+            -webkit-box-shadow: 6px 5px 5px -3px rgba(119, 119, 119, 0.78);
+            box-shadow: 6px 5px 7px -5px rgba(119, 119, 119, 0.78);
+            margin-top: 6vw;
+            line-height: 22px;
+        }
+
+        ul:nth-child(1),
+        ul:nth-child(2) {
+            list-style: none;
+            list-style-type: "\2705";
+            list-style-position: outside;
+            margin-top: 2vw;
+        }
+
+        ul li {
+            padding: 1rem 1rem;
+            letter-spacing: 0px;
+            color: #252525;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .listContainer button span {
+            font-size: 2rem;
+        }
+
+        #listContainer li span {
+            font-size: 0.9rem;
+            letter-spacing: 0px;
+            color: #252525;
+            font-weight: 400;
+        }
+
+        #listContainer button {
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: "Poppins", sans-serif;
+            background-color: #4325DF;
+            padding: 10px 30px;
+            border-radius: 32px;
+            transform: translateY(25px);
+        }
+
+        #videoContainer,
+        #supportContainer {
+            margin-top: 3rem;
+            letter-spacing: 0px;
+            line-height: 25px;
+            background-color: #4325DF;
+            height: 35vh;
+        }
+
+        #videoContainer p {
+            color: #ffffff;
+        }
+
+        #videoContainer img {
+            transform: translateY(-5px);
+            border: 10px solid #ffffff;
+        }
+
+        #supportContainer {
+            height: 10vh;
+            background-color: #FBFBF7;
+            color: #414141;
+            letter-spacing: 7px;
+            padding: 20px 2px;
+        }
+
+        #cardGroup {
+            /* transform: translateY(-60px); */
+            margin-top: 50px;
+            padding-top: 50px;
+            transform: translateY(90px);
+            position: relative;
+            z-index: 2;
+        }
+
+        #cardGroup>div:nth-child(1) {
+            margin-left: 25px;
+        }
+
+        #cardGroup>div:nth-child(3) {
+            margin-right: 25px;
+        }
+
+        #cardGroup img {
+            height: 30vh;
+            border-radius: 16px;
+            -webkit-box-shadow: 6px 5px 5px -3px rgba(119, 119, 119, 0.78);
+            box-shadow: 6px 5px 7px -5px rgba(119, 119, 119, 0.78);
+        }
+
+        #regardContainer div:nth-child(1) {
+            background-color: #4325DF;
+            height: 12vh;
+            position: relative;
+            z-index: 0;
+        }
+
+        #regardContainer div:nth-child(2) {
+            background-color: #ffffff;
+            height: 16vh;
+        }
+
+        #regardContainer p {
+            font-size: 1.2rem;
+            letter-spacing: 0px;
+            color: #000000;
+            font-weight: 400;
+            line-height: 1rem;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #cardGroup .btn {
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: "Poppins", sans-serif;
+            padding: 7px 17px;
+            border-radius: 19px;
+            transform: translateY(-16px);
+            color: #414141;
+        }
+
+        #footer {
+            background-color: #0B0019;
+            font-size: 1rem;
+        }
+
+        #footer i {
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding: 1.4rem 0.4rem;
+        }
+
+        @media only screen and (max-width: 700px) and (min-width: 450px) {}
+
+        @media only screen and (max-width: 500px) {
+            body {
+                font-size: 0.9rem;
+            }
+
+            #cardGroup .btn {
+                font-size: 0.6rem;
+                font-weight: 700;
+                font-family: "Poppins", sans-serif;
+                padding: 4px 12px;
+                border-radius: 12px;
+                transform: translateY(-12px);
+                color: #414141;
+            }
+
+            #cardGroup img {
+                height: 20vh;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            body {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="mainContainer">
+        <div class="row">
+            <div class="offset-md-1 col-md-7 col-sm-7">
+                <h1>Let's take your<br>freelancing career<br>to a new orbit, with<br><span class="bg-warning">Pepper
+                        Content!</span></h1>
+            </div>
+            <div class="col-md-4 col-sm-7 p-0">
+                <img class="img-responsive" src="https://i.ibb.co/F5WrkPV/head-Image.jpg"
+                    alt="girl walking out of Screen">
+            </div>
+            <div class="offset-md-1 col-sm-10">
+                <h3>Hello {firstname} ,</h3>
+                <p>We understand that you may have been busy and have not been able to look at the copy test.
+                    Irrespective
+                    of when you decide to spend some time on our platform, there will always be space for fantastic
+                    creators
+                    like you. We hope that we can help accelerate your application at Pepper Content, so that we can
+                    quickly
+                    open up a plethora of content opportunities for you! </p>
+                <h3>We are waiting for you to get started and complete the following steps for you to become a
+                    <span class="text-primary">'Verified
+                        Creator'</span> on Pepper Content -</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8" id="listContainer">
+                <ul>
+                    <li>Sign-up for your Pepper Content creator account
+                    </li>
+                    <li>Complete the language
+                        proficiency test
+                        <br><span>We require our creators to pass our base
+                            threshold of language proficiency</span></li>
+                </ul>
+                <ul>
+                    <li>Complete the copy-test <br><span>Post-qualification, based on the industry and content vertical
+                            you choose, there are standardized copy tests that allow us to evaluate your writing style
+                            better and take a call</span></li>
+                    <li>Be a part of the world's most premium vetted network of creators and get a chance to write for
+                        top brands of the country! You can access the portal to give the test here. Looking forward to
+                        seeing the amazing work you are capable of :)</li>
+                </ul>
+                <button href="#" class="btn btn-pill btn-primary d-block mx-auto">Get Started
+                    <span>&#x2192;</span></button>
+            </div>
+        </div>
+        <div class="row justify-content-center" id="videoContainer">
+            <div class="col-md-8">
+                <p class="pt-4">Meanwhile, here is a video on how to navigate through the next steps of the
+                    application in case you need some directions
+                </p>
+            </div>
+            <div class="col-md-8 text-center">
+                <img src="https://i.ibb.co/sCSThzC/video-Pepper.jpg" alt="videoPepper" class="img-fluid">
+            </div>
+        </div>
+        <div class="row justify-content-center" id="supportContainer">
+            <div class="col-sm-9">
+                <p>If you are facing any issues or technical difficulties or with the platform, please feel free to mail
+                    us at <b>support@peppercontent.in</b> and we will get back at
+                    the earliest!</p>
+                <p class="mt-4"><b>Learn more about how we are empowering more creators through the Pepper Work
+                        platform
+                        and
+                        our community here - </b></p>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around flex-nowrap" id="cardGroup">
+            <div class="p-2"><img src="https://i.ibb.co/30pL81J/card1.jpg" alt="Card1" class="img-fluid"><button
+                    href="#" class="btn btn-pill btn-light d-block mx-auto">Read Article
+                    <span>&#x2192;</span></button></div>
+            <div class="p-2"><img src="https://i.ibb.co/YZShdm7/card2.jpg" alt="Card2" class="img-fluid"><button
+                    href="#" class="btn btn-pill btn-light d-block mx-auto">Read Article
+                    <span>&#x2192;</span></button></div>
+            <div class="p-2"><img src="https://i.ibb.co/SNbDb6j/card3.jpg" alt="Card3" class="img-fluid"><button
+                    href="#" class="btn btn-pill btn-light d-block mx-auto">Read Article
+                    <span>&#x2192;</span></button></div>
+        </div>
+        <div class="row" id="regardContainer">
+            <div class="col-12"></div>
+            <div class="offset-sm-1 col-sm-8 mt-4">
+                <p><b><em>Warm regards,</em></b></p>
+                <p>Creator Success Team<br>
+                    Pepper Content</p>
+            </div>
+        </div>
+        <div class="row" id="footer">
+            <div class="offset-sm-1 col-sm-5"><img src="https://i.ibb.co/PWfGHzd/logo.jpg" class="img-fluid mx-auto"
+                    alt="logo">
+            </div>
+            <div class="offset-sm-2 col-sm-4"><i class='fab fa-instagram'></i><i class='fab fa-linkedin'></i><i
+                    class='fab fa-twitter'></i><i class='fab fa-facebook'></i></div>
+        </div>
+    </div>
+    <!--Bootstrap Script files-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <!--Font Awesome Script-->
+    <script src="https://kit.fontawesome.com/60a61a91f5.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
